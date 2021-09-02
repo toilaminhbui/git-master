@@ -6,6 +6,7 @@ const routerPost = require("./routers/post")
 const routerUser = require("./routers/user")
 const routerAuth = require("./routers/auth")
 
+connectDB()
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.get("/", (req, res) => {
