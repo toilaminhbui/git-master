@@ -1,0 +1,26 @@
+{
+  "name": "gitmaster",
+  "version": "1.0.0",
+  "description": "go to git master",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/toilaminhbui/git-master.git"
+  },
+  "keywords": [
+    "buivanminh"
+  ],
+  "author": "buivanminh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/toilaminhbui/git-master/issues"
+  },
+  "homepage": "https://github.com/toilaminhbui/git-master#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
