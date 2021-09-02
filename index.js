@@ -5,7 +5,7 @@ const port = process.env.PORT || 3000
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.get("/", (req, res) => {
-  res.json({ status: "success", message: "hello world" })
+  res.json({ status: "success", message: "Bùi Văn Minh nha bà con" })
 })
 
 app.listen(port, () => {
