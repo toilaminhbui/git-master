@@ -1,16 +1,22 @@
 const Post = require("../models/post")
 
 const getAllPosts = async (req, res) => {
+  const page = req.params._page
+  const pageLimit = req.params._limit
+  const pageSkip = (page - 1) * pageLimit
   try {
+    const lengthData = await Post.find()
     const data = await Post.find()
       .populate("author", "username")
       .select("title description createdAt")
+      .limit(pageLimit)
+      .skip(pageSkip)
     if (data.length === 0) {
       return res
         .status(500)
         .json({ status: "failed", message: "Post not found" })
     }
-    res.status(200).json({ status: "success", result: data.length, data })
+    res.status(200).json({ status: "success", total: lengthData.length, data })
   } catch (err) {
     res.status(500).json({ status: "failed", err })
   }
