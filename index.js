@@ -12,9 +12,7 @@ app.use(express.json())
 app.get("/", (req, res) => {
   res.json({ status: "success", message: "Bùi Văn Minh nha bà con" })
 })
-app.get("/api/post", (req, res) => {
-  res.send("hello")
-})
+app.get("/api/post", routerPost)
 app.use("/api/user", routerUser)
 app.use("/api/auth", routerAuth)
 
