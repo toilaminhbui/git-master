@@ -1,5 +1,6 @@
 const { connectDB } = require("./db")
 const express = require("express")
+const cors = require("cors")
 const app = express()
 const port = process.env.PORT || 3000
 const routerPost = require("./routers/post")
@@ -7,6 +8,7 @@ const routerUser = require("./routers/user")
 const routerAuth = require("./routers/auth")
 
 connectDB()
+app.use(cors())
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.get("/", (req, res) => {
