@@ -8,7 +8,11 @@ const routerUser = require("./routers/user")
 const routerAuth = require("./routers/auth")
 
 connectDB()
-app.use(cors())
+app.use(
+  cors({
+    origin: "https://buivanminh.tk"
+  })
+)
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.get("/", (req, res) => {
