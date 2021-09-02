@@ -1,9 +1,8 @@
 const Post = require("../models/post")
 
 const getAllPosts = async (req, res) => {
-  console.log(req.userId)
   try {
-    const data = await Post.find({ author: req.userId })
+    const data = await Post.find()
       .populate("author", "username")
       .select("title description createdAt")
     if (data.length === 0) {
