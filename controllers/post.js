@@ -1,8 +1,7 @@
 const Post = require("../models/post")
 
 const getAllPosts = async (req, res) => {
-  const page = req.query._page
-  const pageLimit = 5
+  const { page, limit } = req.query
   const pageSkip = (page - 1) * pageLimit
   if (page) {
     try {
@@ -10,7 +9,7 @@ const getAllPosts = async (req, res) => {
       const data = await Post.find()
         .populate("author", "username")
         .select("title description createdAt")
-        .limit(pageLimit)
+        .limit(limit)
         .skip(pageSkip)
       if (data.length === 0) {
         return res
