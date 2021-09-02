@@ -2,7 +2,7 @@ const Post = require("../models/post")
 
 const getAllPosts = async (req, res) => {
   const page = req.query._page
-  const pageLimit = req.query._limit
+  const pageLimit = 5
   const pageSkip = (page - 1) * pageLimit
   if (page) {
     try {
