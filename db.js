@@ -3,8 +3,7 @@ const mongoose = require("mongoose")
 const connectDB = async () => {
   try {
     await mongoose.connect(process.env.DB_URI, {
-      useNewUrlParser: true,
-      useCreateIndex: true
+      useNewUrlParser: true
     })
     console.log("👌 mongoose is connected")
   } catch (err) {
