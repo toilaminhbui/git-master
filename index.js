@@ -10,7 +10,7 @@ const routerAuth = require("./routers/auth")
 connectDB()
 app.use(
   cors({
-    origin: "https://buivanminh.tk"
+    origin: ["https://buivanminh.tk", "http://localhost:3000"]
   })
 )
 app.use(express.urlencoded({ extended: true }))
